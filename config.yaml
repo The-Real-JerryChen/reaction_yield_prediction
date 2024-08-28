@@ -1,0 +1,38 @@
+mlp_model:
+  mlp_hidden_size: 512
+  dense_layers: 4
+  sparse_layers: 2
+  num_experts: 4
+  dropout_ratio: 0.2
+  output_dim: 512
+
+graph_model:
+  hidden_size: 64
+  num_step_mp: 3
+  num_step_set2set: 3
+  num_layer_set2set: 1
+  output_dim: 1024
+
+smiles_model:
+  embed_dim: 512
+  num_heads: 2
+  context_length: 512
+  num_layers: 4
+  output_dim: 1024
+
+predictor:
+  hidden_size: 512
+  dropout_ratio: 0.1
+
+pretraining:
+  epochs: 50
+  lr: 0.0001
+  batch_size: 512
+
+training:
+  batch_size: 256
+  lr: 0.001
+  weight_decay: 0.00005
+  epochs: 300
+  dataset_path: "./data/SM.pkl"
+  pretrained: False
